@@ -1,7 +1,7 @@
 import { vsprintf } from "sprintf-js";
 
 import { convertAtSignToStringSign } from "./placeholder";
-import { encodeKey } from "./resource";
+import { encodeKey, ucfirst } from "./resource";
 
 let bundle;
 
@@ -16,7 +16,8 @@ const getBundle = (function () {
 
 export function localize(key: string, ...args: string[]): string {
   const localizedString = getBundle().localizedStringForKeyValueTable(encodeKey(key), key, null);
-  return vsprintf(convertAtSignToStringSign(localizedString), args);
+  let string vsprintf(convertAtSignToStringSign(localizedString), args);
+  return ucfirst(string);
 }
 
 export function overrideLocale(locale: string): boolean {
