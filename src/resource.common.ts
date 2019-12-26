@@ -10,3 +10,7 @@ export function replace(find: string[], replace: string[], subject: string): str
     match => replace[find.indexOf(match)]
   );
 }
+
+export function ucfirst(string): string {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
