@@ -1,7 +1,7 @@
 import { vsprintf } from "sprintf-js";
 import * as utils from "utils/utils";
 
-import { encodeKey } from "./resource";
+import { encodeKey, ucfirst } from "./resource";
 
 const getResources = (function () {
   let resources = null;
@@ -21,7 +21,8 @@ export function localize(key: string, ...args: string[]): string {
   } catch (error) {
     localizedString = key;
   }
-  return vsprintf(localizedString, args);
+  let string = vsprintf(localizedString, args);
+  return ucfirst(string);
 }
 
 export function overrideLocale(locale: string): boolean {
