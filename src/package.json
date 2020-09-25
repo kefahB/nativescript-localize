@@ -28,6 +28,10 @@
     {
       "name": "Brendan Ingham",
       "email": "brendan.ingham13@gmail.com"
+    },
+    {
+      "name": "Kefah BADER",
+      "email": "kefah.bader@gmail.com"
     }
   ],
   "main": "index.js",
